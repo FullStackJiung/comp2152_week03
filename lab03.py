@@ -24,7 +24,24 @@ if mCombatStrength < 1 or mCombatStrength > 6:
 
 
 
-# # Battle
+# # Simulate Battle
+for j in range(1, 21, 2): #Simulation of 20 rounds, stepping by 2
+    # Dice rolls for hero and monster
+    heroRoll = random.choice(diceOptions) 
+    monsterRoll = random.choice(diceOptions) 
+
+    # Calculate the weapons
+    heroWeapon = weapon(heroRoll - 1)
+    monsterWeapon = weapon(monsterRoll - 1)
+
+    # Calculate total strength
+    heroTotal = combatStrength + heroRoll
+    monsterTotal = combatStrength + monsterRoll
+
+    # Print round details
+    print("\n Round {j} Hero rolled {heroRoll}, Monster rolled {monsterRoll}")
+    print("Hero selected: {heroWeapon}, Monster selected: {monsterWeapon}")
+    print("Hero total strength: {heroTotal}, Monster total strength: {monsterTotal}")
 # for j in range(1, 21, 2):
 #     heroRoll, monsterRoll = random.choice(diceOptions), random.choice(diceOptions)
 #     heroTotal, monsterTotal = combatStrength + heroRoll, mCombatStrength + monsterRoll
