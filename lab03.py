@@ -42,6 +42,22 @@ for j in range(1, 21, 2): #Simulation of 20 rounds, stepping by 2
     print("\n Round {j} Hero rolled {heroRoll}, Monster rolled {monsterRoll}")
     print("Hero selected: {heroWeapon}, Monster selected: {monsterWeapon}")
     print("Hero total strength: {heroTotal}, Monster total strength: {monsterTotal}")
+
+    # Determine winner
+    if heroTotal > monsterTotal:
+        print ("hero wins!")
+    elif heroTotal < monsterTotal:
+        print("Monster wins the round")
+    else:
+        print("It's a tie!")
+
+    if j ==11:
+        print("\n Battle Truce declread in Round 11. Game Over!")
+        break
+
+if j != 11:
+    print("\n Battle concluded after 20 round!")
+        
 # for j in range(1, 21, 2):
 #     heroRoll, monsterRoll = random.choice(diceOptions), random.choice(diceOptions)
 #     heroTotal, monsterTotal = combatStrength + heroRoll, mCombatStrength + monsterRoll
